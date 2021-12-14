@@ -90,7 +90,7 @@ int client_handshake(int *to_server) {
         return 0;
     }
 
-    printf("Sending name to server\n");
+    printf("Step 1: Sending name to server\n");
     int foo = write(*to_server, pidp, HANDSHAKE_BUFFER_SIZE);
     if (foo == -1){
         printf("Error: %s\n", strerror(errno));
@@ -115,7 +115,7 @@ int client_handshake(int *to_server) {
     printf("Removing secret pipe\n");
     remove(pidp);
 
-    printf("Writing response to server\n");
+    printf("Step 3: Writing response to server\n");
     int hoo = write(*to_server, ACK, sizeof(ACK));
     if (hoo == -1){
         printf("Error: %s\n", strerror(errno));
