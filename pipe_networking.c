@@ -90,7 +90,7 @@ int client_handshake(int *to_server) {
         return 0;
     }
 
-    printf("Sending name to server");
+    printf("Sending name to server\n");
     int foo = write(*to_server, pidp, HANDSHAKE_BUFFER_SIZE);
     if (foo == -1){
         printf("Error: %s\n", strerror(errno));
