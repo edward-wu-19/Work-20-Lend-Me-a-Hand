@@ -58,7 +58,7 @@ int server_handshake(int *to_client) {
 
     printf("Verifying message\n");
     if (strcmp(message, ACK) == 0){
-        printf("Three ways handshake achieved!\n");
+        printf("Three way handshake achieved!\n");
     }
     else{
         printf("Three way handshake failed!\n");
